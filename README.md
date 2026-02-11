@@ -1,5 +1,7 @@
 # Campus City Logistics -- Supply Distribution Optimization
 
+---
+
 ## 📌 Problem Statement
 
 As an optimization analyst at **Campus City Logistics**, the objective
@@ -18,31 +20,31 @@ budget
 
 ## 📊 Dataset Overview
 
-### Facilities Data
+### 🏫 Facilities Data
 
 Six critical campus facilities were selected:
 
-Facility ID Facility Name Type Daily Demand
+Facility ID Facility Name Type Daily Demand (Units)
 
 ---
 
-MED_CENTER Campus Medical Center Hospital \~80 units
-ENG_BUILDING Engineering Building Academic \~30 units
-SCIENCE_HALL Science Hall Academic \~28--35 units
-DORM_A North Dormitory Residential \~49--55 units
-DORM_B South Dormitory Residential \~45--51 units
-LIBRARY Main Library Academic \~25--30 units
+MED_CENTER Campus Medical Center Hospital \~80
+ENG_BUILDING Engineering Building Academic \~30
+SCIENCE_HALL Science Hall Academic \~28--35
+DORM_A North Dormitory Residential \~49--55
+DORM_B South Dormitory Residential \~45--51
+LIBRARY Main Library Academic \~25--30
 
-Total Daily Demand ≈ **269--270 units/day**
-
----
-
-### Warehouse Data
+**Total Daily Demand ≈ 269--270 Units/Day**
 
 ---
 
-Warehouse ID Name Daily Capacity Construction Operational
-Cost Cost / Day
+### 🏭 Warehouse Data
+
+---
+
+Warehouse ID Warehouse Name Daily Capacity Construction Operational
+(Units) Cost Cost / Day
 
 ---
 
@@ -57,23 +59,26 @@ Warehouse
 
 ---
 
-Total Capacity = **1200 units/day**
+**Total Capacity = 1200 Units/Day**
 
 ---
 
-### Transportation Costs
+### 🚚 Transportation Costs
 
-- Range ≈ **\$3.4 -- \$4.7 per unit**
-- Based on real geographic distance calculations
+- Cost Range ≈ **\$3.4 -- \$4.7 per unit**
+- Based on geographic distance calculations
 
 ---
 
 ## 💰 Financial Constraints
 
-- Annual Budget = **\$1,500,000**
-- Planning Period = **365 days**
-- Construction Cost amortized over **10 years**
-- All costs annualized
+Parameter Value
+
+---
+
+Annual Budget \$1,500,000
+Planning Period 365 Days
+Construction Amortization 10 Years
 
 ---
 
@@ -81,8 +86,8 @@ Total Capacity = **1200 units/day**
 
 - Select **exactly 2 warehouses**
 - Meet **100% facility demand**
-- Warehouse shipment ≤ Annual Capacity
-- Total Annual Cost ≤ Budget
+- Shipment from warehouse ≤ Annual capacity
+- Total annual cost ≤ Budget
 - Shipment quantities ≥ 0
 
 ---
@@ -91,12 +96,16 @@ Total Capacity = **1200 units/day**
 
 ### Optimization Technique
 
-Mixed Integer Linear Programming (MILP) using **PuLP**
+**Mixed Integer Linear Programming (MILP)** using PuLP
 
 ### Decision Variables
 
-- Binary → Warehouse open/close decision
-- Continuous → Shipment quantities
+Variable Type Meaning
+
+---
+
+Warehouse Selection Binary Open or Close Warehouse
+Shipment Quantity Continuous Units shipped Warehouse → Facility
 
 ### Objective Function
 
@@ -108,12 +117,12 @@ Minimize:
 
 ## 🧮 Model Implementation Features
 
-✅ CSV-driven data loading\
-✅ Annual demand & capacity calculation\
-✅ Fixed cost amortization\
-✅ Real transportation cost integration\
-✅ Budget constraint enforcement\
-✅ Visualization of supply network
+- CSV-based dynamic data loading
+- Annual demand and capacity calculation
+- Fixed cost amortization
+- Real transportation cost integration
+- Budget constraint enforcement
+- Supply network visualization
 
 ---
 
@@ -121,22 +130,32 @@ Minimize:
 
 ### 💵 Financial Summary
 
-- Total Annual Cost: **\$959,466.05**
-- Fixed Costs: **\$605,500**
-- Transport Costs: **\$353,966.05**
-- Remaining Budget: **\$540,533.95**
+Metric Value
 
 ---
 
-### 🏭 Warehouse Selection
+Total Annual Cost \$959,466.05
+Fixed Costs \$605,500
+Transport Costs \$353,966.05
+Remaining Budget \$540,533.95
 
-Selected Warehouses: - ✅ WH_NORTH - ✅ WH_SOUTH - ❌ WH_EAST
+---
+
+### 🏭 Selected Warehouses
+
+Warehouse Selected
+
+---
+
+WH_NORTH ✅
+WH_SOUTH ✅
+WH_EAST ❌
 
 ---
 
 ### 📦 Distribution Plan (Annual Units)
 
-Warehouse Facility Units
+Warehouse Facility Units Shipped
 
 ---
 
@@ -151,31 +170,35 @@ WH_SOUTH DORM_B 18,615
 
 ## 📊 Key Insights
 
-- Demand fully satisfied for all facilities
-- Warehouses operate below full capacity (cost-efficient operation)
+- All facility demand fully satisfied
+- Warehouses operate below full capacity (cost-efficient)
 - WH_EAST excluded due to higher fixed cost vs transport savings
-- Solution well within budget limit
+- Solution operates well within budget
 
 ---
 
 ## 🛠 Technologies Used
 
-- Python
-- PuLP (Optimization)
-- Pandas (Data Processing)
-- Matplotlib (Visualization)
+Technology Purpose
+
+---
+
+Python Core Programming
+PuLP Optimization Modeling
+Pandas Data Processing
+Matplotlib Visualization
 
 ---
 
 ## 📌 Conclusion
 
-The developed MILP optimization model successfully identifies the most
+The MILP optimization model successfully determines the most
 cost-effective warehouse selection and supply distribution strategy. The
-model is fully data-driven and scalable for real-world logistics
-planning scenarios.
+system is fully data-driven and scalable for real-world logistics
+optimization.
 
 ---
 
-## 👤 Author: Ashil George James
+## 👤 Project
 
 Campus City Logistics Optimization Project
