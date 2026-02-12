@@ -9,7 +9,7 @@ import os
 print("Loading data...")
 
 # Define the folder name
-DATA_FOLDER = 'data'
+DATA_FOLDER = '../data'
 
 # Helper function to get the correct path
 def get_path(filename):
@@ -29,7 +29,7 @@ except FileNotFoundError as e:
 
 # Parameters from Problem Statement
 TARGET_FACILITIES = ['MED_CENTER', 'ENG_BUILDING', 'SCIENCE_HALL', 
-                     'DORM_A', 'DORM_B', 'LIBRARY']
+                    'DORM_A', 'DORM_B', 'LIBRARY']
 TARGET_WAREHOUSES = ['WH_NORTH', 'WH_SOUTH', 'WH_EAST']
 
 DAYS_PER_YEAR = 365
